@@ -3,13 +3,15 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import axios from 'axios';
 export default function () {
-    const [messages, setMessages] = useState(0)
+    const [messages, setMessages] = useState([])
     const getMessages = () => {
-        axios.get(`https://jsonplaceholder.typicode.com/users`)
+        axios.get(`https://djiyyv2szc.execute-api.us-east-2.amazonaws.com/Staging`)
             .then(res => {
                 const data = res.data
-                setMessages({ data });
+                
+                setMessages( data );
             })
+        console.log(messages instanceof Array)
     }
     useEffect(() => {
         getMessages();
@@ -28,10 +30,18 @@ export default function () {
                     Welcome to <a href="https://nextjs.org">Next.js!</a>
                 </h1>
                 <div className={styles.grid}>
-                    <a href="https://nextjs.org/docs" className={styles.card}>
-                        <h2>Documentation &rarr;</h2>
-                        <p>Find in-depth information about Next.js features and API.</p>
-                    </a>
+                    {
+                        messages.map((item, index) => {
+                            return (
+                            <a href="https://nextjs.org/docs" className={styles.card}>
+                                <h2>Sent: {item.createdAt} &rarr;</h2>
+                                <p>Email: {item.email} Contact: {item.contact}</p>
+                                <p>{item.message}</p>
+                            </a>
+                            )
+                        })
+                    }
+
                 </div>
             </main>
         </div>

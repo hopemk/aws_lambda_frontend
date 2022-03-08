@@ -15,12 +15,12 @@ export default function () {
         setFormData({
             ...formData, [event.target.name]: event.target.value
         })
-        console.log(formData)
+        //console.log(formData)
     }
     const handleSubmit = event => {
         event.preventDefault();
-
-        axios.post(`https://9d0t51qr2m.execute-api.us-east-2.amazonaws.com/Stage/contact-HelloWorldFunction-p1kRjNLaBiK9`, { formData })
+        console.log(formData)
+        axios.post(` https://djiyyv2szc.execute-api.us-east-2.amazonaws.com/Staging`,  formData )
             .then(res => {
                 console.log(res);
                 console.log(res.data);
