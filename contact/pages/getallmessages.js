@@ -45,7 +45,11 @@ export default function () {
 
                 </div>
                 <article className={styles.message}>
-                    <p>article</p>
+                    <p>name</p>
+                    <p>email phone</p>
+                    <h4>subject</h4>
+                    <div>message</div>
+                    <button>Respond</button>
                 </article>
                 </section>
             </main>
