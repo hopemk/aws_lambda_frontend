@@ -64,7 +64,14 @@
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
-
+.main section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  /*justify-items: center;*/
+  justify-content: center;
+  align-items: center;
+}
 .grid {
   display: flex;
   align-items: center;
@@ -100,10 +107,13 @@
 
 .card p {
   margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1;
 }
 
+.card p .sent{
+  text-align: right;
+}
 .logo {
   height: 1em;
   margin-left: 0.5rem;
@@ -178,3 +188,6 @@
   }
 }
 
+.message{
+  
+}

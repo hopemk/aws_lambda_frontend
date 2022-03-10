@@ -29,12 +29,13 @@ export default function () {
                 <h1 className={styles.title}>
                     Welcome to <a href="https://nextjs.org">Next.js!</a>
                 </h1>
+                <section>
                 <div className={styles.grid}>
                     {
                         messages.map((item, index) => {
                             return (
                             <a href="https://nextjs.org/docs" className={styles.card}>
-                                <h2>Sent: {item.createdAt} &rarr;</h2>
+                                <p className={styles.sent}>Sent: {item.createdAt}</p>
                                 <p>Email: {item.email} Contact: {item.contact}</p>
                                 <p>{item.message}</p>
                             </a>
@@ -43,6 +44,10 @@ export default function () {
                     }
 
                 </div>
+                <article className={styles.message}>
+                    <p>article</p>
+                </article>
+                </section>
             </main>
         </div>
     )

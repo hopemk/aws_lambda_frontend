@@ -20,7 +20,7 @@ export default function () {
     const handleSubmit = event => {
         event.preventDefault();
         console.log(formData)
-        axios.post(` https://djiyyv2szc.execute-api.us-east-2.amazonaws.com/Staging`,  formData )
+        axios.post(`https://djiyyv2szc.execute-api.us-east-2.amazonaws.com/Staging`,  formData )
             .then(res => {
                 console.log(res);
                 console.log(res.data);
